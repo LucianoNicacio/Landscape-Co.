@@ -35,7 +35,7 @@ app/public/wp-blog-header.php
 app/public/wp-comments-post.php
 app/public/wp-config-sample.php
 app/public/wp-config.php
-!app/public/wp-content/themes
+!app/public/wp-content/themes/understrap
 !app/public/wp-content/plugins
 app/public/wp-cron.php
 app/public/wp-includes
