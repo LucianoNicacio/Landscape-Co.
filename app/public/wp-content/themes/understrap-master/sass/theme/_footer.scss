@@ -1,9 +1,10 @@
 #wrapper-footer {
 	background-color: #FAFAFA;
-    max-height: 75rem;
-    @media only screen and (max-width: 1024px) {
-        max-height: 65rem;
-    }
+	max-height: 75rem;
+
+	@media only screen and (max-width: 1024px) {
+		max-height: 65rem;
+	}
 
 	a {
 		color: black;
@@ -16,93 +17,121 @@
 	.footer-content {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-        padding: 0 25rem 20rem 10rem;
-        @media only screen and (max-width: $sm) {
-            grid-template-columns: 1fr;
-            padding: 0 0 10rem 2rem;
-        }
+		padding: 0 25rem 20rem 10rem;
+
+		@media only screen and (max-width: $sm) {
+			grid-template-columns: 1fr;
+			padding: 0 0 10rem 2rem;
+		}
 
 		.footer-brand {
 			max-width: 25rem;
-            padding-right: 3rem;
+			padding-right: 3rem;
 
-				.fa-tree {
-					color: #16BF12;
-					font-size: 1.4rem;
-				}
-
-				h1 {
-					font-family: 'inter';
-					font-weight: 700;
-
-				}
-
-				p {
-					line-height: 2;
-					font-size: 0.8rem;
-				}
+			.fa-tree {
+				color: #16BF12;
+				font-size: 1.4rem;
 			}
 
-			.footer-right {
-				display: grid;
-				grid-template-columns: 1fr 1fr 1fr;
-				font-family: 'DM sans';
+			h1 {
+				font-family: 'inter';
+				font-weight: 700;
+
+			}
+
+			p {
+				line-height: 2;
 				font-size: 0.8rem;
-
-				@media only screen and (max-width: 768px) {
-                    grid-template-columns: 1fr 1fr;
-                    margin: 2rem 0rem;
-                    
-				}
-				@media only screen and (max-width: $xm) {
-                    grid-template-columns: 1fr;
-                    .social-media {
-                        padding-bottom: 1rem;
-                        line-height: 1;
-                    }
-                    
-				}
-				@media only screen and (max-width: 1024px) {
-                    .contact,.social-media,.hours {
-                        padding: 2.5rem 2.5rem 0 4rem;
-                    }
-                    
-				}
-				@media only screen and (max-width: 768px) {
-                    .contact,.social-media,.hours {
-                        padding: 0.5rem 2.5rem 0 4rem;
-                    }
-                    
-				}
-				@media only screen and (max-width: $xm) {
-                    .contact,.social-media,.hours {
-                        padding: 1rem 2.5rem 0 0rem;
-                    }
-                    
-				}
-
-				.title-top {
-                    font-weight: 700;
-				}
-
-				p {
-                    font-weight: 400;
-                    line-height: 1;
-				}
-
 			}
 		}
 
-		.footer-copyright {
-			font-family: 'inter';
-			font-weight: 500;
+		.footer-right {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			font-family: 'DM sans';
 			font-size: 0.8rem;
 
-			.dev {
-				&:hover {
-					text-decoration: underline;
-				}
+			@media only screen and (max-width: 768px) {
+				grid-template-columns: 1fr 1fr;
+				margin: 2rem 0rem;
+
 			}
+
+			@media only screen and (max-width: $xm) {
+				grid-template-columns: 1fr;
+
+				.social-media {
+					padding-bottom: 1rem;
+					line-height: 1;
+				}
+
+			}
+
+			@media only screen and (max-width: 1024px) {
+
+				.contact,
+				.social-media,
+				.hours {
+					padding: 2.5rem 2.5rem 0 4rem;
+				}
+
+			}
+
+			@media only screen and (max-width: 768px) {
+
+				.contact,
+				.social-media,
+				.hours {
+					padding: 0.5rem 2.5rem 0 4rem;
+				}
+
+			}
+
+			@media only screen and (max-width: $xm) {
+
+				.contact,
+				.social-media,
+				.hours {
+					padding: 1rem 2.5rem 0 0rem;
+				}
+
+
+			}
+
+			.title-top {
+				font-weight: 700;
+			}
+
+			.fa {
+				padding-right: 0.2rem;
+			}
+
+			p {
+				font-weight: 400;
+				line-height: 1;
+			}
+
 		}
 	}
 
+	.footer-copyright {
+		font-family: 'inter';
+		font-weight: 500;
+		font-size: 0.8rem;
+
+		.dev {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.post-edit-link {
+	color: black;
+
+	&:hover {
+		color: green;
+	}
+
+}
