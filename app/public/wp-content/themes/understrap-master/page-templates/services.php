@@ -16,7 +16,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 ?>
 
-<div class="wrapper" id="full-width-page-wrapper">
+<div class="wrapper-services" id="full-width-page-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content">
 
@@ -24,16 +24,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			<div class="col-md-12 content-area" id="primary">
 
-				<main class="site-main about-page" id="main" role="main">
+				<main class="site-main service-page" id="main" role="main">
 
 					<?php
 					while ( have_posts() ) {
 						the_post();
+						landscape_services_list();
 						get_template_part( 'loop-templates/content', 'page' );
 
 						
 					}
+					
 					?>
+					
 
 				</main><!-- #main -->
 

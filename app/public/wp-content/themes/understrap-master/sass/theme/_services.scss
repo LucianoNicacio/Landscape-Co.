@@ -1,0 +1,71 @@
+.wrapper-services {
+	background-color: #e5e5e5;
+
+	.service-page {
+		.services-list {
+			margin: 4rem 0rem;
+			padding-left: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			@media only screen and (min-width: 768px){
+				padding-left: 0;
+			}
+			@media only screen and (max-width: 768px){
+				align-items: center;
+			}
+
+			.site-service {
+				margin: 2rem 0;
+				// text-align: center;
+				position: relative;
+				text-align: center;
+				@media only screen and (max-width: 992px){
+					max-width: 28rem;
+				}
+				
+
+				h3 {
+					font-family: "DM Sans";
+					font-weight: 700;
+					font-size: 2rem;
+					@media only screen and (max-width: 420px){
+						font-size: 1.7rem;
+					}
+				}
+				p {
+					font-family: "DM Sans";
+					font-weight: 400;
+					text-align: start;
+					Line-height: 40px;
+					
+					@media only screen and (max-width: 992px){
+						padding-left: 1rem;
+					}
+					@media only screen and (max-width: 400px){
+						Line-height: 30px;
+					}
+				}
+				.card-content {
+					display: flex;
+					flex-direction: column;
+					
+					@media only screen and (min-width: 992px) {
+						text-align: start;
+						padding-left: 0;
+						position: absolute;
+						top: 20%;
+						left: 45%;
+					  }
+					  @media only screen and (max-width: 1200px) and (min-width: 992px)  {
+						
+						position: absolute;
+						top: 17%;
+						left: 55%;
+					  }
+
+				}
+			}
+		}
+	}
+}
