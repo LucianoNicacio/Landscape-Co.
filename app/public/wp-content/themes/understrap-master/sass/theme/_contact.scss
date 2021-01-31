@@ -1,0 +1,57 @@
+.contact-page {
+	.site-main {
+		.entry-content {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin: 2rem 0 10rem 2rem;
+
+			@media only screen and (min-width: 992px) {
+				position: relative;
+			}
+			@media only screen and (max-width: 620px) {
+                margin-top: 15rem;
+                margin-bottom: -8rem;
+                margin-left: -0.5rem;
+			}
+
+			
+
+			p {
+				font-family: 'inter';
+				font-weight: 400;
+				text-align: start;
+				max-width: 23rem;
+                line-height: 37px;
+                @media only screen and (max-width: 320px) {
+                    max-width: 17rem;
+				}
+			}
+
+			#wpgmza_map {
+				@media only screen and (min-width: 992px) {
+					bottom: 55rem;
+					left: 35rem;
+				}
+
+				@media only screen and (max-width: 1024px) {
+					left: 28rem;
+                }
+                
+				@media only screen and (max-width: 768px) {
+                    left: 0;
+				}
+				@media only screen and (max-width: 620px) {
+                    max-width: 300px;
+                    max-height: 200px;
+                    margin: 0 auto !important;
+                    bottom: 71.5rem;
+				}
+				@media only screen and (max-width: 320px) {
+                    max-width: 250px;
+				}
+			}
+
+		}
+	}
+}

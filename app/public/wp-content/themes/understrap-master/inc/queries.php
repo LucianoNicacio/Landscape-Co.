@@ -1,4 +1,4 @@
-<?function landscape_services_list() {?>
+<?php function landscape_services_list() {?>
     <ul class="services-list">
        <?php 
           $args = array(
@@ -20,3 +20,4 @@
         <?php endwhile; wp_reset_postdata();?>
     </ul>
 <?php }
+
