@@ -818,18 +818,20 @@ class RestAPI extends Factory
 				
 				$marker = Marker::createInstance($id);
 				
-				foreach($_POST as $key => $value)
-				{
+				foreach($_POST as $key => $value){
 					if($key == 'id')
 						continue;
 					
-					if($key == 'gallery')
-					{
+					if($key == 'gallery'){
 						$gallery = new MarkerGallery($_POST[$key]);
 						$marker->gallery = $gallery;
-					}
-					else
+					} else {
 						$marker->{$key} = stripslashes($value);
+					}
+				}
+
+				if(empty($_POST['gallery']) && !empty($marker->gallery)){
+					$marker->gallery = false;
 				}
 				
 				$map = Map::createInstance($marker->map_id);

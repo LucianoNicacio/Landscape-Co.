@@ -138,8 +138,9 @@ jQuery(function($) {
 				
 				var marker = features[0].wpgmzaMarker;
 					
-				if(!marker)
+				if(!marker){
 					return;
+				}
 				
 				marker.trigger("click");
 				marker.trigger("select");
@@ -241,14 +242,40 @@ jQuery(function($) {
 			else if("button" in event)
 				isRight = event.button == 2;
 			
-			if(event.which == 1 || event.button == 1)
-			{
+			if(event.which == 1 || event.button == 1){
 				if(self.isBeingDragged)
 					return;
 				
 				// Left click
 				if($(event.target).closest(".ol-marker").length)
 					return; // A marker was clicked, not the map. Do nothing
+
+				/*
+				 * User is clicking on the map, but looks like it was not a marker...
+				 * 
+				 * Finding a light at the end of the tunnel 
+				*/
+				try{
+					var featuresUnderPixel = self.olMap.getFeaturesAtPixel([event.offsetX, event.offsetY]);
+				}catch(e) {
+					return;
+				}
+				
+				if(!featuresUnderPixel)
+					featuresUnderPixel = [];
+				
+				var nativeFeaturesUnderPixel = [], i, props;
+				for(i = 0; i < featuresUnderPixel.length; i++){
+					props = featuresUnderPixel[i].getProperties();
+					
+					if(!props.wpgmzaFeature)
+						continue;
+					
+					nativeFeature = props.wpgmzaFeature;
+					nativeFeaturesUnderPixel.push(nativeFeature);
+					
+					nativeFeature.trigger("click");
+				}
 				
 				self.trigger({
 					type: "click",
@@ -258,8 +285,9 @@ jQuery(function($) {
 				return;
 			}
 			
-			if(!isRight)
+			if(!isRight){
 				return;
+			}
 			
 			return self.onRightClick(event);
 		});

@@ -1,30 +1,13 @@
-#wrapper-navbar {
-    position: relative;
-	.navbar {
-		height: 35vh;
+.site {
+	#wrapper-navbar {
+		background-color: $primary;
+		padding-bottom: 4rem;
 
-		@media (max-width: 360px) {
-			height: 40vh;
-		}
-
-		.container {
-			margin-bottom: 15rem;
-			position: relative;
-
-			// margin-bottom: 15rem;
-			.logo-tree {
-				color: $green-color;
-				font-size: 1.5rem;
-				padding: 0 1rem;
-			}
-
-			.navbar-brand {
-				font-family: 'inter';
-			}
-
-			.navbar-nav {
-				text-transform: capitalize;
-                font-family: 'inter';
+		.navbar {
+			.container {
+				.show {
+					padding-bottom: 1rem;
+				}
 
 				.nav-link {
 					@media (max-width: 767px) {
@@ -32,30 +15,29 @@
 						border-bottom: 0.1rem solid #737373;
 
 					}
+
+					.custom-logo-link {
+						img {
+							width: 58%;
+						}
+					}
 				}
 
 
 			}
 		}
 
-    }
-    .subtitle {
-        position: absolute;
-        top: 50%;
-        left: 35%;
-        text-decoration: underline #16BF12;;
-        @media (max-width: $sm) {
-           font-size: 1.5rem;
-        }
-        @media (max-width: $sm) {
-           left: 25%;
-        }
-}
-.display-none {
-    opacity: 0;
-    visibility: hidden;
-}
+	}
+
+	.subtitle {
+		display: flex;
+		justify-content: center;
+		text-decoration: underline #16BF12;
+		margin-bottom: 0;
 
 
-
+		@media (max-width: $sm) {
+			font-size: 1.5rem;
+		}
+	}
 }

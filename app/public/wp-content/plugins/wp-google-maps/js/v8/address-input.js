@@ -17,7 +17,7 @@ jQuery(function($) {
 		var json;
 		var options = {
 			fields: ["name", "formatted_address"],
-			types:	["geocode"]
+			types:	["geocode", "establishment"]
 		};
 		
 		if(json = $(element).attr("data-autocomplete-options"))

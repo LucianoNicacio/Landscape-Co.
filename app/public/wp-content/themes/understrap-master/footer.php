@@ -19,17 +19,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 <div class="wrapper" id="wrapper-footer">
 	<div class="footer-content">
 		<div class="footer-brand">
-			<i class="fa fa-tree"></i>
-			<!-- Your site title as branding in the menu -->
-			<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
+			<!-- <i class="fa fa-tree"></i>
+			
+			<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1> -->
 			<p>We're proud of our contribution towards building the future, ground up! Our landscaping company is ready to complete any kind of project for any type of commercial and residential client!</p>
 		</div>
 		<div class="footer-right">
 			<div class="contact">
 				<p class="title-top">Contact us</p>
-					<p><i class="fa fa-map-marker" aria-hidden="true"></i>Yarmouth, MA 02673</p>
-					<p><i class="fa fa-envelope"></i>contact@joes.com</p>
-					<p><i class="fa fa-phone"></i>(508) 776-5177</p>
+					<p><i class="fa fa-map-marker" aria-hidden="true"></i><?php the_field('address', 'option'); ?></p>
+					<p><i class="fa fa-envelope"></i><?php the_field('email', 'option'); ?></p>
+					<p><i class="fa fa-phone"></i><?php the_field('phone', 'option'); ?></p>
 			</div>
 
 			<div class="social-media">
@@ -39,8 +39,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			<div class="hours">
 				<p class="title-top">Working hours</p>
-				<p>Mon - Sat</p>
-				<p>7:00AM - 6:00PM</p>
+				<p><?php the_field('working_days', 'option'); ?></p>
+				<p><?php the_field('working_hours', 'option'); ?></p>
 			</div>
 		</div>
 

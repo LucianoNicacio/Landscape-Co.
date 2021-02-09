@@ -1116,7 +1116,7 @@
 						</div>
 					</fieldset>
 					
-					<fieldset class="wpgmza-pro-feature">
+					<fieldset>
 						<legend>
 							<?php
 							_e("Hide point of interest", "wp-google-maps");
@@ -1127,7 +1127,7 @@
 							<input type='checkbox'
 								id='wpgmza_hide_point_of_interest' 
 								name='hide_point_of_interest' 
-								class='postform cmn-toggle cmn-toggle-round-flat wpgmza-pro-feature'/>
+								class='postform cmn-toggle cmn-toggle-round-flat'/>
 							<label for='wpgmza_hide_point_of_interest' 
 								data-on='<?php _e("Yes", "wp-google-maps"); ?>'
 								data-off='<?php _e("No", "wp-google-maps"); ?>'>
@@ -1285,6 +1285,21 @@
 								name="polygon_labels"
 								class="postform cmn-toggle cmn-toggle-round-flat wpgmza-pro-feature"/>
 							<label for="polygon_labels"></label>
+						</div>
+					</fieldset>
+
+					<fieldset class="wpgmza-pro-feature">
+						<legend>
+							<?php
+							_e("Disable Polygon InfoWindows", "wp-google-maps");
+							?>
+						</legend>
+						<div class='switch'>
+							<input type="checkbox"
+								id="disable_polygon_info_windows"
+								name="disable_polygon_info_windows"
+								class="postform cmn-toggle cmn-toggle-round-flat wpgmza-pro-feature"/>
+							<label for="disable_polygon_info_windows"></label>
 						</div>
 					</fieldset>
 					

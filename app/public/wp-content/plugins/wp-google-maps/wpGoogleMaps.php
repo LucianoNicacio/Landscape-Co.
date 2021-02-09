@@ -3,7 +3,7 @@
 Plugin Name: WP Google Maps
 Plugin URI: https://www.wpgmaps.com
 Description: The easiest to use Google Maps plugin! Create custom Google Maps with high quality markers containing locations, descriptions, images and links. Add your customized map to your WordPress posts and/or pages quickly and easily with the supplied shortcode. No fuss.
-Version: 8.1.7
+Version: 8.1.9
 Author: WP Google Maps
 Author URI: https://www.wpgmaps.com
 Text Domain: wp-google-maps
@@ -12,6 +12,20 @@ Domain Path: /languages
 
 
 /*
+ *
+ * 8.1.9 - 2021-02-04
+ * Fixed issue where 'Hide Point of Interest' option was not available without the Pro add-on
+ * Added establishment suggestions to the Google Maps Autocomplete module
+ * Added basic Usercentrics integration. Thanks to the Usercentrics development team for additional technical documentation
+ *
+ * 8.1.8 - 2021-02-01
+ * Fixed an issue where OpenLayers Tile Server Key field would not be visible without the Pro add-on
+ * Fixed an issue where OpenLayers would not allow click event bubbling for features
+ * Fixed an issue with marker storage logic that would prevent the Pro add-on from removing gallery images
+ * Fixed an issue where the store locator would scroll to the map element, even when modern locator style is active
+ * Fixed an issue with the onApproveMarker event trigger in the marker panel
+ * Added pep.js to the dependencies of the plugin to support pointer events on iOS 12 devices
+ *
  * 8.1.7 - 2021-01-26
  * Fixed issue where you could not disable FontAwesome from loading on the frontend
  * Fixed issue where FontAwesome V4 would be loaded when V5 should have been loaded

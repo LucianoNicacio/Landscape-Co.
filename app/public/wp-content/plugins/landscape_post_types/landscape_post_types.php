@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name:       Lanscape Post Types
+ * Plugin Name:       Landscape Post Types
  * Plugin URI:        
  * Description:       Adds a new Post Type into WordPress.
  * Version:           1.0.0

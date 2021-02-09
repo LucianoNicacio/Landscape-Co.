@@ -764,6 +764,18 @@ jQuery(function($) {
 		window.WPGMZA = $.extend(window.WPGMZA, core);
 	else
 		window.WPGMZA = core;
+
+	/* Usercentrics base level integration */
+	if(window.uc && window.uc.reloadOnOptIn){
+		window.uc.reloadOnOptIn(
+		    'S1pcEj_jZX'
+		); 	
+
+		window.uc.reloadOnOptOut(
+			'S1pcEj_jZX'
+		);
+	}
+
 	
 	for(var key in WPGMZA_localized_data)
 	{
@@ -1720,7 +1732,7 @@ jQuery(function($) {
 		var json;
 		var options = {
 			fields: ["name", "formatted_address"],
-			types:	["geocode"]
+			types:	["geocode", "establishment"]
 		};
 		
 		if(json = $(element).attr("data-autocomplete-options"))
@@ -8330,8 +8342,10 @@ jQuery(function($) {
 			return false;
 		}
 		
-		WPGMZA.animateScroll(this.map.element);
-		
+		if((typeof this.map.settings.store_locator_style !== 'undefined' && this.map.settings.store_locator_style !== "modern") && WPGMZA.settings.user_interface_style !== 'modern' && WPGMZA.settings.user_interface_style === 'default'){
+			WPGMZA.animateScroll(this.map.element);
+		}
+
 		function callback(results, status)
 		{
 			self.map.trigger({
@@ -11360,8 +11374,9 @@ jQuery(function($) {
 				
 				var marker = features[0].wpgmzaMarker;
 					
-				if(!marker)
+				if(!marker){
 					return;
+				}
 				
 				marker.trigger("click");
 				marker.trigger("select");
@@ -11463,14 +11478,40 @@ jQuery(function($) {
 			else if("button" in event)
 				isRight = event.button == 2;
 			
-			if(event.which == 1 || event.button == 1)
-			{
+			if(event.which == 1 || event.button == 1){
 				if(self.isBeingDragged)
 					return;
 				
 				// Left click
 				if($(event.target).closest(".ol-marker").length)
 					return; // A marker was clicked, not the map. Do nothing
+
+				/*
+				 * User is clicking on the map, but looks like it was not a marker...
+				 * 
+				 * Finding a light at the end of the tunnel 
+				*/
+				try{
+					var featuresUnderPixel = self.olMap.getFeaturesAtPixel([event.offsetX, event.offsetY]);
+				}catch(e) {
+					return;
+				}
+				
+				if(!featuresUnderPixel)
+					featuresUnderPixel = [];
+				
+				var nativeFeaturesUnderPixel = [], i, props;
+				for(i = 0; i < featuresUnderPixel.length; i++){
+					props = featuresUnderPixel[i].getProperties();
+					
+					if(!props.wpgmzaFeature)
+						continue;
+					
+					nativeFeature = props.wpgmzaFeature;
+					nativeFeaturesUnderPixel.push(nativeFeature);
+					
+					nativeFeature.trigger("click");
+				}
 				
 				self.trigger({
 					type: "click",
@@ -11480,8 +11521,9 @@ jQuery(function($) {
 				return;
 			}
 			
-			if(!isRight)
+			if(!isRight){
 				return;
+			}
 			
 			return self.onRightClick(event);
 		});
@@ -15750,7 +15792,7 @@ jQuery(function($) {
 			self.onAdjustFeature(event);
 		});
 
-		$(document.body).find('.wpgmza_approve_btn').on("click", function(event) {
+		$(document.body).on("click", ".wpgmza_approve_btn", function(event) {
 			self.onApproveMarker(event);
 		});
 		

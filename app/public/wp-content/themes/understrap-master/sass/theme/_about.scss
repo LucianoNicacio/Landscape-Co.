@@ -1,12 +1,21 @@
 
     .about-page {
         font-family: 'dm sans';
-        max-width: 70rem;
-        text-align: center;
+        max-width: 75rem;
+        text-align: start;
         line-height: 2.5rem;
         display: flex;
         align-items: center;
         font-size: 1.5rem;
+        @media only screen and (max-width: 768px)  {
+            text-align: center;
+        }
+        .entry-content {
+            padding-bottom: 5rem;
+            p {
+                padding-top: 1.8rem;
+            }
+        }
     }
 
 

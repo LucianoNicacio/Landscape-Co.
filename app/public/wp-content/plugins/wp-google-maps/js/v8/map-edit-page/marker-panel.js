@@ -33,7 +33,7 @@ jQuery(function($) {
 			self.onAdjustFeature(event);
 		});
 
-		$(document.body).find('.wpgmza_approve_btn').on("click", function(event) {
+		$(document.body).on("click", ".wpgmza_approve_btn", function(event) {
 			self.onApproveMarker(event);
 		});
 		

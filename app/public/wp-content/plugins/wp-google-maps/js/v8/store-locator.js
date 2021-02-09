@@ -214,8 +214,10 @@ jQuery(function($) {
 			return false;
 		}
 		
-		WPGMZA.animateScroll(this.map.element);
-		
+		if((typeof this.map.settings.store_locator_style !== 'undefined' && this.map.settings.store_locator_style !== "modern") && WPGMZA.settings.user_interface_style !== 'modern' && WPGMZA.settings.user_interface_style === 'default'){
+			WPGMZA.animateScroll(this.map.element);
+		}
+
 		function callback(results, status)
 		{
 			self.map.trigger({

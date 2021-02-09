@@ -1,10 +1,16 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
 
 // ############  Header  ####################
+@import "./header-front";
+
+// ############  Header  ####################
 @import "./header";
 
 // ############ Footer  ####################
 @import "./footer";
+
+// ############ About Page  ####################
+@import "./front-page";
 
 // ############ About Page  ####################
 @import "./about";
@@ -14,4 +20,19 @@
 
 // ############ Contact Page  ####################
 @import "./contact";
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+    -webkit-transition: opacity 250ms ease-in;
+    -moz-transition: opacity 250ms ease-in;
+    -ms-transition: opacity 250ms ease-in;
+    -o-transition: opacity 250ms ease-in;
+}
+
+.fade-in.appear {
+    opacity: 1;
+}
+
+
 

@@ -123,7 +123,8 @@ class ScriptLoader
 			'javascript-cookie'		=> $plugin_dir_url . 'lib/jquery-cookie.js',
 			'remodal'				=> $plugin_dir_url . "lib/remodal{$minified}.js",
 			'spectrum'				=> $plugin_dir_url . 'lib/spectrum.js',
-			
+			// PEP JS for iOS 12 pointer events
+			'pepjs'					=> $plugin_dir_url . 'lib/pep.js',
 			// TODO: These are only needed if the server supports inflate
 			'fast-text-encoding'	=> $plugin_dir_url . 'lib/text.js',
 			'pako'					=> $plugin_dir_url . 'lib/pako_deflate.min.js'

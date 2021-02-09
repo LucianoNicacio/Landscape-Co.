@@ -762,6 +762,18 @@ jQuery(function($) {
 		window.WPGMZA = $.extend(window.WPGMZA, core);
 	else
 		window.WPGMZA = core;
+
+	/* Usercentrics base level integration */
+	if(window.uc && window.uc.reloadOnOptIn){
+		window.uc.reloadOnOptIn(
+		    'S1pcEj_jZX'
+		); 	
+
+		window.uc.reloadOnOptOut(
+			'S1pcEj_jZX'
+		);
+	}
+
 	
 	for(var key in WPGMZA_localized_data)
 	{

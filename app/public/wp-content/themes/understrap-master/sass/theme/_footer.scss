@@ -1,5 +1,5 @@
 #wrapper-footer {
-	background-color: #FAFAFA;
+	background-color: #e9ecef;
 	max-height: 75rem;
 
 	@media only screen and (max-width: 1024px) {
@@ -28,22 +28,14 @@
 			max-width: 25rem;
 			padding-right: 3rem;
 
-			.fa-tree {
-				color: #16BF12;
-				font-size: 1.4rem;
-			}
-
-			h1 {
-				font-family: 'inter';
-				font-weight: 700;
-
-			}
-
 			p {
 				line-height: 2;
 				font-size: 0.8rem;
+				font-family: 'DM sans';
 			}
 		}
+		  }
+
 
 		.footer-right {
 			display: grid;
@@ -104,6 +96,7 @@
 
 			.fa {
 				padding-right: 0.2rem;
+				color: #B0B0B0;
 			}
 
 			p {

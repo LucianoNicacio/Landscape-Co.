@@ -1,20 +1,26 @@
-// Add your JS customizations here
+// fade-in affect
 
-// title no visibility when click on navigation buttton
-const sub = document.querySelector(".subtitle");
-const toggle = document.querySelector(".navbar-toggler");
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = {
+    threshold: 0,
+    rootMargin: "0px 0px -100px 0px"
+  };
 
-
-toggle.addEventListener('click', () =>{
-    sub.classList.add('display-none');
-});
-
-
-
-
-
-
-
-
-
-
+const appearOnScroll = new IntersectionObserver(function(
+    entries,
+    appearOnScroll
+  ) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        return;
+      } else {
+        entry.target.classList.add("appear");
+        appearOnScroll.unobserve(entry.target);
+      }
+    });
+  },
+  appearOptions);
+  
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });

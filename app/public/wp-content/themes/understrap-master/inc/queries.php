@@ -8,7 +8,7 @@
 
           while($services->have_posts()): $services->the_post();
        ?>
-      <li class="site-service card gradient">
+      <li class="site-service card gradient fade-in">
          <?php the_post_thumbnail(); ?>
             <div class="card-content">
                 <h3><?php the_title(); ?></h3>
@@ -20,4 +20,3 @@
         <?php endwhile; wp_reset_postdata();?>
     </ul>
 <?php }
-

@@ -1150,10 +1150,10 @@
 		</fieldset>
 		
 		<fieldset data-required-maps-engine="open-layers">
-			<legend class="wpgmza-pro-feature-hide">
+			<legend>
 				<?php echo __('OpenLayers Tileserver Key', 'wp-google-maps'); ?>
 			</legend>
-			<label class="wpgmza-pro-feature-hide">
+			<label>
 				<input name='open_layers_api_key'/>
 				<p>
 					<small>
@@ -1204,7 +1204,7 @@
 					<label>
 						<input name="wpgmza_settings_marker_pull" value="0" type="radio" checked="checked"/>
 						<?php
-						esc_html_e("Database (Great for small amounts of markers)", "wp-google-maps");
+						esc_html_e("Database", "wp-google-maps");
 						?>
 					</label>
 				</li>
@@ -1212,7 +1212,7 @@
 					<label>
 						<input name="wpgmza_settings_marker_pull" value="1" type="radio"/>
 						<?php
-						esc_html_e("XML File  (Great for large amounts of markers)", "wp-google-maps");
+						esc_html_e("XML File", "wp-google-maps");
 						?>
 					</label>
 				</li>

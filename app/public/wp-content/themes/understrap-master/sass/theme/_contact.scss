@@ -1,11 +1,15 @@
 .contact-page {
 	.site-main {
+		margin: 0;
 		.entry-content {
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
-            margin: 2rem 0 10rem 2rem;
+            margin: 2rem 0 2rem 2rem;
 
+			@media only screen and (min-width: 1024px) {
+				margin-bottom: -15rem;
+			}
 			@media only screen and (min-width: 992px) {
 				position: relative;
 			}
@@ -36,6 +40,7 @@
 
 				@media only screen and (max-width: 1024px) {
 					left: 28rem;
+					max-width: 380px;
                 }
                 
 				@media only screen and (max-width: 768px) {
